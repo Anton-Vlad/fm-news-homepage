@@ -1,0 +1,41 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 0;
+
+    .nav-menu {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        justify-content: flex-end;
+        gap: 2.5rem;
+
+        li {
+            font-size: 0.9375rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.625rem; /* 173.333% */
+            cursor: pointer;
+
+            a {
+                font: inherit;
+                color: inherit;
+                cursor: pointer;
+                
+                &:hover {
+                    color: var(--soft-red);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    nav {
+        .nav-menu {
+            display: flex;
+        }
+    }
+}
