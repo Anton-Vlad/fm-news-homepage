@@ -7,6 +7,7 @@ import SmallImage1 from "@/assets/images/image-retro-pcs.jpg";
 import SmallImage2 from "@/assets/images/image-top-laptops.jpg";
 import SmallImage3 from "@/assets/images/image-gaming-growth.jpg";
 import HeroImage from "@/assets/images/image-web-3-desktop.jpg";
+import HeroImageMobile from "@/assets/images/image-web-3-mobile.jpg";
 
 </script>
 
@@ -15,7 +16,8 @@ import HeroImage from "@/assets/images/image-web-3-desktop.jpg";
 
     <div class="main-article-wrapper">
         <article class="main-article">
-            <img :src="HeroImage" alt="">
+            <img class="main-article__hero-image" :src="HeroImage" alt="">
+            <img class="main-article__hero-image mobile" :src="HeroImageMobile" alt="">
             <div class="article-small__content">
                 <h1>
                     The Bright Future of Web 3.0?

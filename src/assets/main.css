@@ -11,10 +11,10 @@
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 800;
-  line-height: 3.5rem; /* 100% */
+  line-height: 2.5rem; /* 100% */
   margin: 0;
   color: var(--very-dark-blue, #00001a);
   font-feature-settings: "clig" off, "liga" off;
@@ -23,10 +23,10 @@ h1 {
 h2 {
   color: var(--soft-orange, #e9aa52);
   font-feature-settings: "clig" off, "liga" off;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 2.5rem; /* 100% */
+  line-height: 2rem; /* 100% */
   margin-bottom: 2rem;
 }
 
@@ -56,6 +56,11 @@ h2 {
 @media (min-width: 1400px) {
   h1 {
     font-size: 3.5rem;
+    line-height: 3.5rem; /* 100% */
+  }
+  h2 {
+    font-size: 2.5rem;
+    line-height: 2.5rem; /* 100% */
   }
   li {
     align-items: center;

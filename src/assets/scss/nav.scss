@@ -2,22 +2,42 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5rem 0;
+    margin: 2rem 0;
+    position: relative;
+    z-index: 1001;
 
     .nav-menu {
         display: none;
         list-style: none;
         margin: 0;
         padding: 0;
-        justify-content: flex-end;
-        gap: 2.5rem;
+
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 16rem;
+        height: 100dvh;
+        transform: translateX(16rem);
+        background-color: var(--off-white);
+        padding: 9rem 1.5rem 3rem;
+        transition: 0.3s transform ease-in-out;
+
+        &.nav-menu--visible {
+            transform: translateX(0);
+        }
 
         li {
-            font-size: 0.9375rem;
-            font-style: normal;
+            font-size: 1.125rem;
+            line-height: 1.5rem; /* 133.333% */
             font-weight: 400;
-            line-height: 1.625rem; /* 173.333% */
+            font-style: normal;
             cursor: pointer;
+            margin-bottom: 1.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
 
             a {
                 font: inherit;
@@ -30,12 +50,72 @@ nav {
             }
         }
     }
+
+    .nav-logo-mobile {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.opacity-layer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--very-dark-blue);
+    opacity: 0;
+    transition: 0.3s opacity ease-in-out;
+
+    &.opacity-layer--visible {
+        opacity: 0.5;
+    }
+
+    &.opacity-layer--active {
+        display: block;
+        z-index: 1000;
+    }
 }
 
 @media (min-width: 1400px) {
     nav {
+        margin: 5rem 0;
+
         .nav-menu {
             display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: flex-end;
+            gap: 2.5rem;
+            transform: none;
+            position: static;
+            top: initial;
+            right: initial;
+            width: auto;
+            height: auto;
+            background-color: var(--off-white);
+
+            li {
+                font-size: 0.9375rem;
+                line-height: 1.625rem; /* 173.333% */
+                margin-bottom: 0;
+            }
+        }
+
+        .nav-logo-mobile {
+            display: none;
+        }
+    }
+
+    .opacity-layer {
+        display: none;
+
+        &.opacity-layer--active {
+            display: none;
+            z-index: -1;
         }
     }
 }
